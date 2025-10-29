@@ -116,6 +116,17 @@
             align-items: center;
             cursor: pointer;
             transition: transform 0.2s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .piece.white {
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .piece.black {
+            color: black;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
         }
         
         .piece:hover {
@@ -474,7 +485,7 @@
                         const piece = boardState[row][col];
                         if (piece) {
                             const pieceElement = document.createElement('div');
-                            pieceElement.className = 'piece';
+                            pieceElement.className = `piece ${piece.color}`;
                             pieceElement.innerHTML = pieceSymbols[piece.color][piece.type];
                             pieceElement.dataset.color = piece.color;
                             pieceElement.dataset.type = piece.type;
